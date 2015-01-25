@@ -1,0 +1,46 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Behaviors="using:WpWinNl.Behaviors"
+    x:Class="SoftwareKeysDemo.MainPage"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+  <Page.BottomAppBar>
+    <CommandBar Opacity="0.7">
+      <AppBarButton Icon="Accept" Label="Click"/>
+    </CommandBar>
+  </Page.BottomAppBar>
+
+	<Interactivity:Interaction.Behaviors>
+		<Behaviors:SizeListenerBehavior x:Name="ContentRootListener"/>
+	</Interactivity:Interaction.Behaviors>
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<!-- Title Panel -->
+		<StackPanel Grid.Row="0" Margin="12,0,0,0">
+			<TextBlock  Text="MY APP" Style="{ThemeResource TitleTextBlockStyle}" 
+				Margin="0,12,0,0" />
+			<TextBlock Text="a map" Margin="0,-6.5,0,26.5" 
+				Style="{ThemeResource HeaderTextBlockStyle}" 
+				CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+				VerticalAlignment="Top"/>
+		</StackPanel>
+
+		<Maps:MapControl Grid.Row="1"/>
+		<Grid Height="150"  Grid.Row="1" VerticalAlignment="Bottom" Background="#FF7A2222" >
+			<Interactivity:Interaction.Behaviors>
+				<Behaviors:KeepFromBottomBehavior WindowHeight="{Binding WatchedObjectHeight, ElementName=ContentRootListener}"/>
+			</Interactivity:Interaction.Behaviors>
+			<TextBlock Text="Some popup"  
+				Style="{ThemeResource TitleTextBlockStyle}" 
+				VerticalAlignment="Bottom" HorizontalAlignment="Center" />
+		</Grid>
+	</Grid>
+</Page>
