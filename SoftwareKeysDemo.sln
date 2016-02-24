@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SoftwareKeysDemo", "SoftwareKeysDemo", "{109AEA5E-EC02-4FD7-95F9-570ECE93B7B6}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwareKeysDemo.Windows", "SoftwareKeysDemo\SoftwareKeysDemo.Windows\SoftwareKeysDemo.Windows.csproj", "{05D1AA80-FBAC-4861-844A-78C15FE70946}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwareKeysDemo.WindowsPhone", "SoftwareKeysDemo\SoftwareKeysDemo.WindowsPhone\SoftwareKeysDemo.WindowsPhone.csproj", "{0A61E40B-DE7A-4BE7-936C-4AB2BDB3361B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwareKeysDemo.Uwp", "SoftwareKeysDemo\SoftwareKeysDemo.Uwp\SoftwareKeysDemo.Uwp.csproj", "{9296698B-3355-40C7-B158-FB1DF9784195}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -53,8 +55,6 @@ Global
 		{05D1AA80-FBAC-4861-844A-78C15FE70946}.Release|x86.Build.0 = Release|x86
 		{05D1AA80-FBAC-4861-844A-78C15FE70946}.Release|x86.Deploy.0 = Release|x86
 		{0A61E40B-DE7A-4BE7-936C-4AB2BDB3361B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A61E40B-DE7A-4BE7-936C-4AB2BDB3361B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A61E40B-DE7A-4BE7-936C-4AB2BDB3361B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{0A61E40B-DE7A-4BE7-936C-4AB2BDB3361B}.Debug|ARM.ActiveCfg = Debug|ARM
 		{0A61E40B-DE7A-4BE7-936C-4AB2BDB3361B}.Debug|ARM.Build.0 = Debug|ARM
 		{0A61E40B-DE7A-4BE7-936C-4AB2BDB3361B}.Debug|ARM.Deploy.0 = Debug|ARM
@@ -72,6 +72,28 @@ Global
 		{0A61E40B-DE7A-4BE7-936C-4AB2BDB3361B}.Release|x86.ActiveCfg = Release|x86
 		{0A61E40B-DE7A-4BE7-936C-4AB2BDB3361B}.Release|x86.Build.0 = Release|x86
 		{0A61E40B-DE7A-4BE7-936C-4AB2BDB3361B}.Release|x86.Deploy.0 = Release|x86
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Debug|Any CPU.Build.0 = Debug|x86
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Debug|Any CPU.Deploy.0 = Debug|x86
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Debug|ARM.ActiveCfg = Debug|ARM
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Debug|ARM.Build.0 = Debug|ARM
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Debug|ARM.Deploy.0 = Debug|ARM
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Debug|x64.ActiveCfg = Debug|x64
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Debug|x64.Build.0 = Debug|x64
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Debug|x64.Deploy.0 = Debug|x64
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Debug|x86.ActiveCfg = Debug|x86
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Debug|x86.Build.0 = Debug|x86
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Debug|x86.Deploy.0 = Debug|x86
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Release|Any CPU.ActiveCfg = Release|x86
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Release|ARM.ActiveCfg = Release|ARM
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Release|ARM.Build.0 = Release|ARM
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Release|ARM.Deploy.0 = Release|ARM
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Release|x64.ActiveCfg = Release|x64
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Release|x64.Build.0 = Release|x64
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Release|x64.Deploy.0 = Release|x64
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Release|x86.ActiveCfg = Release|x86
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Release|x86.Build.0 = Release|x86
+		{9296698B-3355-40C7-B158-FB1DF9784195}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +102,6 @@ Global
 		{DEFA1DE9-6FE1-4A0B-B0BD-D12ED005F479} = {109AEA5E-EC02-4FD7-95F9-570ECE93B7B6}
 		{05D1AA80-FBAC-4861-844A-78C15FE70946} = {109AEA5E-EC02-4FD7-95F9-570ECE93B7B6}
 		{0A61E40B-DE7A-4BE7-936C-4AB2BDB3361B} = {109AEA5E-EC02-4FD7-95F9-570ECE93B7B6}
+		{9296698B-3355-40C7-B158-FB1DF9784195} = {109AEA5E-EC02-4FD7-95F9-570ECE93B7B6}
 	EndGlobalSection
 EndGlobal
