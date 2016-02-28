@@ -10,14 +10,14 @@ namespace WpWinNl.Behaviors
     protected override Thickness GetNewMargin()
     {
       var currentMargin = AssociatedObject.Margin;
-      var baseHeight = 0.0;
+      var baseMargin = 0.0;
       if (ApplicationView.GetForCurrentView().DesiredBoundsMode == ApplicationViewBoundsMode.UseCoreWindow)
       {
         var visibleBounds = ApplicationView.GetForCurrentView().VisibleBounds;
-        baseHeight = visibleBounds.Top - CoreApplication.GetCurrentView().CoreWindow.Bounds.Top + AppBar.ActualHeight;
+        baseMargin = visibleBounds.Top - CoreApplication.GetCurrentView().CoreWindow.Bounds.Top + AppBar.ActualHeight;
       }
       return new Thickness(currentMargin.Left,
-                           OriginalMargin + (AppBar.IsOpen ? GetDeltaHeight() + baseHeight : baseHeight) , 
+                           OriginalMargin + (AppBar.IsOpen ? GetDeltaMargin() + baseMargin : baseMargin) , 
                            currentMargin.Right, currentMargin.Bottom);
     }
 

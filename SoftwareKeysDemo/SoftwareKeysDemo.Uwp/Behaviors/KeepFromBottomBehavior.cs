@@ -55,7 +55,7 @@ namespace WpWinNl.Behaviors
       AssociatedObject.Margin = GetNewMargin();
     }
 
-    protected double GetDeltaHeight()
+    protected double GetDeltaMargin()
     {
       var popup = AppBar.GetVisualDescendents().OfType<Popup>().First();
       return popup.ActualHeight - AppBar.ActualHeight;
@@ -64,21 +64,21 @@ namespace WpWinNl.Behaviors
     protected virtual Thickness GetNewMargin()
     {
       var currentMargin = AssociatedObject.Margin;
-      var baseHeight = 0.0;
+      var baseMargin = 0.0;
       if (ApplicationView.GetForCurrentView().DesiredBoundsMode == ApplicationViewBoundsMode.UseCoreWindow)
       {
         var visibleBounds = ApplicationView.GetForCurrentView().VisibleBounds;
-        baseHeight = CoreApplication.GetCurrentView().CoreWindow.Bounds.Height - visibleBounds.Height +
+        baseMargin = CoreApplication.GetCurrentView().CoreWindow.Bounds.Height - visibleBounds.Height +
                      AppBar.ActualHeight;
 
         if(AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile")
         {
-          baseHeight -= visibleBounds.Top;
+          baseMargin -= visibleBounds.Top;
         }
       }
 
       return new Thickness(currentMargin.Left, currentMargin.Top, currentMargin.Right,
-                           OriginalMargin + (AppBar.IsOpen ? GetDeltaHeight() + baseHeight : baseHeight));
+                           OriginalMargin + (AppBar.IsOpen ? GetDeltaMargin() + baseMargin : baseMargin));
     }
 
     protected AppBar AppBar { get; private set; }
