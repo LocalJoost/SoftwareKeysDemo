@@ -65,7 +65,7 @@ namespace SoftwareKeysDemo.Uwp
             {
                 // Uncomment this line to get the full screen - and see that it still works.
 
-                //ApplicationView.GetForCurrentView().SetDesiredBoundsMode(ApplicationViewBoundsMode.UseCoreWindow);
+                // ApplicationView.GetForCurrentView().SetDesiredBoundsMode(ApplicationViewBoundsMode.UseCoreWindow);
 
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation

@@ -6,15 +6,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:behaviors="using:WpWinNl.Behaviors"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
     mc:Ignorable="d">
 
-  <Page.BottomAppBar>
-    <CommandBar >
-      <AppBarButton Icon="Accept" Label="Click"/>
+  <Page.BottomAppBar >
+    <CommandBar Opacity="0.7" >
+      <AppBarButton Icon="Accept" Label="Click" />
     </CommandBar>
   </Page.BottomAppBar>
-  <Page.TopAppBar>
-    <CommandBar ClosedDisplayMode="Minimal" >
+  <Page.TopAppBar >
+    <CommandBar ClosedDisplayMode="Minimal" Opacity="0.7" >
       <AppBarButton Icon="Cancel" Label="Click"/>
     </CommandBar>
   </Page.TopAppBar>
@@ -24,19 +25,19 @@
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
+    <maps:MapControl Grid.RowSpan="2" x:Name="MyMap"></maps:MapControl>
 
     <!-- Title Panel -->
     <StackPanel Grid.Row="0" Margin="12,0,0,0">
       <interactivity:Interaction.Behaviors>
         <behaviors:KeepFromTopBehavior />
       </interactivity:Interaction.Behaviors>
-      <TextBlock  Text="MY APP" Style="{ThemeResource TitleTextBlockStyle}"/>
-      <TextBlock Text="a map" Margin="0,-6.5,0,26.5" 
+      <TextBlock  Text="My Demo App" Style="{ThemeResource TitleTextBlockStyle}"/>
+      <TextBlock Text="This is a map" Margin="0,-6.5,0,26.5" 
 				Style="{ThemeResource HeaderTextBlockStyle}" 
 				VerticalAlignment="Top"/>
     </StackPanel>
 
-    <Grid Grid.Row="1" Background="Blue"/>
     <Grid Height="150"  Grid.Row="1" VerticalAlignment="Bottom" Background="#FF7A2222" >
       <interactivity:Interaction.Behaviors>
         <behaviors:KeepFromBottomBehavior />
