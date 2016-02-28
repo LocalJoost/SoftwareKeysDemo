@@ -20,8 +20,8 @@ namespace WpWinNl.Behaviors
 
     private void AssociatedObjectLoaded(object sender, RoutedEventArgs e)
     {
-      OriginalMargin = GetOriginalMargin();
       AssociatedObject.Loaded -= AssociatedObjectLoaded;
+      OriginalMargin = GetOriginalMargin();
       AppBar = GetAppBar(AssociatedObject.GetVisualAncestors().OfType<Page>().First());
       if (AppBar != null)
       {
