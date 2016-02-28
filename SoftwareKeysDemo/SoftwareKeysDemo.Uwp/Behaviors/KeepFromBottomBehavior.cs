@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Threading.Tasks;
 using Windows.ApplicationModel.Core;
 using Windows.System.Profile;
 using Windows.UI.ViewManagement;
@@ -12,9 +11,6 @@ namespace WpWinNl.Behaviors
 {
   public class KeepFromBottomBehavior : Behavior<FrameworkElement>
   {
-    protected AppBar AppBar { get; private set; }
-
-    protected double OriginalMargin { get; private set; }
 
     protected override void OnAttached()
     {
@@ -36,6 +32,14 @@ namespace WpWinNl.Behaviors
       }
     }
 
+    protected override void OnDetaching()
+    {
+      AppBar.Opened -= AppBarManipulated;
+      AppBar.Closed -= AppBarManipulated;
+      ApplicationView.GetForCurrentView().VisibleBoundsChanged -= VisibleBoundsChanged;
+      base.OnDetaching();
+    }
+
     private void VisibleBoundsChanged(ApplicationView sender, object args)
     {
       UpdateMargin();
@@ -44,14 +48,6 @@ namespace WpWinNl.Behaviors
     void AppBarManipulated(object sender, object e)
     {
       UpdateMargin();
-    }
-
-    protected override void OnDetaching()
-    {
-      AppBar.Opened -= AppBarManipulated;
-      AppBar.Closed -= AppBarManipulated;
-      ApplicationView.GetForCurrentView().VisibleBoundsChanged -= VisibleBoundsChanged;
-      base.OnDetaching();
     }
 
     private void UpdateMargin()
@@ -85,6 +81,10 @@ namespace WpWinNl.Behaviors
       return new Thickness(currentMargin.Left, currentMargin.Top, currentMargin.Right,
                            OriginalMargin + (AppBar.IsOpen ? GetDeltaHeight() + baseHeight : baseHeight));
     }
+
+    protected AppBar AppBar { get; private set; }
+
+    protected double OriginalMargin { get; private set; }
 
     protected virtual AppBar SetAppBar(Page page)
     {
