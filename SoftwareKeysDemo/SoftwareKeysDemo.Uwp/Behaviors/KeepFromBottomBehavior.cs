@@ -22,7 +22,7 @@ namespace WpWinNl.Behaviors
     {
       OriginalMargin = GetOriginalMargin();
       AssociatedObject.Loaded -= AssociatedObjectLoaded;
-      AppBar = SetAppBar(AssociatedObject.GetVisualAncestors().OfType<Page>().First());
+      AppBar = GetAppBar(AssociatedObject.GetVisualAncestors().OfType<Page>().First());
       if (AppBar != null)
       {
         AppBar.Opened += AppBarManipulated;
@@ -63,7 +63,6 @@ namespace WpWinNl.Behaviors
 
     protected virtual Thickness GetNewMargin()
     {
-
       var currentMargin = AssociatedObject.Margin;
       var baseHeight = 0.0;
       if (ApplicationView.GetForCurrentView().DesiredBoundsMode == ApplicationViewBoundsMode.UseCoreWindow)
@@ -86,7 +85,7 @@ namespace WpWinNl.Behaviors
 
     protected double OriginalMargin { get; private set; }
 
-    protected virtual AppBar SetAppBar(Page page)
+    protected virtual AppBar GetAppBar(Page page)
     {
       return page.BottomAppBar;
     }

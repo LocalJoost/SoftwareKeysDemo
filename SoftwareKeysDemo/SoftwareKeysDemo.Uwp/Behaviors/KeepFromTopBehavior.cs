@@ -21,7 +21,7 @@ namespace WpWinNl.Behaviors
                            currentMargin.Right, currentMargin.Bottom);
     }
 
-    protected override AppBar SetAppBar(Page page)
+    protected override AppBar GetAppBar(Page page)
     {
       return page.TopAppBar;
     }
