@@ -11,7 +11,7 @@
 
   <Page.BottomAppBar >
     <CommandBar Opacity="0.7" >
-      <AppBarButton Icon="Accept" Label="Click" />
+      <AppBarButton Icon="Accept" Label="Click"  Click="ButtonBase_OnClick"/>
     </CommandBar>
   </Page.BottomAppBar>
   <Page.TopAppBar >
