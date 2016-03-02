@@ -53,8 +53,8 @@ namespace WpWinNl.Behaviors
       AppBar.Closed -= AppBarManipulated;
       AppBar.SizeChanged -= AppBarSizeChanged;
       ApplicationView.GetForCurrentView().VisibleBoundsChanged -= VisibleBoundsChanged;
-      base.OnDetaching();
       ResetMargin();
+      base.OnDetaching();
     }
     private void AppBarSizeChanged(object sender, SizeChangedEventArgs e)
     {
