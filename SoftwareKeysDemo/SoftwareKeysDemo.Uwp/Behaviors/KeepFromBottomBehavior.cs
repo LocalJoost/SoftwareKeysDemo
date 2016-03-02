@@ -66,7 +66,7 @@ namespace WpWinNl.Behaviors
       UpdateMargin();
     }
 
-    void AppBarManipulated(object sender, object e)
+    private void AppBarManipulated(object sender, object e)
     {
       UpdateMargin();
     }
