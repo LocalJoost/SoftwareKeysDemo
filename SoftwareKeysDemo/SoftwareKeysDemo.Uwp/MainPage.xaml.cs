@@ -56,5 +56,11 @@ namespace SoftwareKeysDemo.Uwp
       }
     }
 
+    private void ButtonBase1_OnClick(object sender, RoutedEventArgs e)
+    {
+      BottomAppBar.ClosedDisplayMode = BottomAppBar.ClosedDisplayMode == AppBarClosedDisplayMode.Compact
+        ? AppBarClosedDisplayMode.Minimal
+        : AppBarClosedDisplayMode.Compact;
+    }
   }
 }

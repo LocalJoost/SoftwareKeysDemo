@@ -16,7 +16,7 @@
   </Page.BottomAppBar>
   <Page.TopAppBar >
     <CommandBar ClosedDisplayMode="Minimal" Opacity="0.7" >
-      <AppBarButton Icon="Cancel" Label="Click"/>
+      <AppBarButton Icon="Cancel" Label="Click" Click="ButtonBase1_OnClick"/>
     </CommandBar>
   </Page.TopAppBar>
 

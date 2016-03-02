@@ -38,21 +38,27 @@ namespace WpWinNl.Behaviors
 
           AppBar.Opened += AppBarManipulated;
           AppBar.Closed += AppBarManipulated;
+          AppBar.SizeChanged += AppBarSizeChanged;
           UpdateMargin();
           ApplicationView.GetForCurrentView().VisibleBoundsChanged += VisibleBoundsChanged;
           return true;
         }
       }
       return false;
-
     }
+
     protected override void OnDetaching()
     {
       AppBar.Opened -= AppBarManipulated;
       AppBar.Closed -= AppBarManipulated;
+      AppBar.SizeChanged -= AppBarSizeChanged;
       ApplicationView.GetForCurrentView().VisibleBoundsChanged -= VisibleBoundsChanged;
       base.OnDetaching();
       ResetMargin();
+    }
+    private void AppBarSizeChanged(object sender, SizeChangedEventArgs e)
+    {
+      UpdateMargin();
     }
 
     private void VisibleBoundsChanged(ApplicationView sender, object args)
